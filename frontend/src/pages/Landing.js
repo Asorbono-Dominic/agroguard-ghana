@@ -10,14 +10,27 @@ const steps = [
 export default function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero */}
-      <div className="bg-green-800 text-white py-24 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
+
+      {/* Hero with background image */}
+      <div
+        className="relative text-white py-24 px-6 text-center overflow-hidden"
+        style={{ minHeight: '520px' }}
+      >
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-farm.jpg')" }}
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.55)' }} />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl mx-auto" style={{ paddingTop: '80px' }}>
           <div className="text-6xl mb-4">🌾</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Protect Your Harvest with AI
           </h1>
-          <p className="text-green-200 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-gray-200 text-lg mb-8 max-w-xl mx-auto">
             AgroGuard Ghana uses artificial intelligence and real weather data
             to predict crop loss risks for Ghanaian farmers — before it's too late.
           </p>
@@ -44,7 +57,7 @@ export default function Landing() {
         </div>
       </div>
 
-      {/* Focus areas */}
+      {/* Crops section */}
       <div className="bg-green-50 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Crops We Cover</h2>
@@ -65,6 +78,7 @@ export default function Landing() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }
